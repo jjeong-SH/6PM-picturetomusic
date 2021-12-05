@@ -1,8 +1,12 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import torch
+import torchvision.transforms as transforms
 
 from PIL import Image
+from torchvision.models import resnet18
+
 
 def documentation():
     st.write('''
@@ -21,6 +25,10 @@ def run_program():
     if upload_img:
         image_pil = Image.open(upload_img)
         st.image(image_pil)
+        tf = transforms.ToTensor()
+        img_tensor = tf(image_pil)
+        img_tensor = transforms.Resize((256, 256))(img_tensor)
+        #st.write(img_tensor.shape)
 
 def home_page():
     st.write('''
@@ -64,9 +72,3 @@ if __name__ == "__main__":
         home_page()
     else:
         feedback_page()
-
-
-
-
-
-
