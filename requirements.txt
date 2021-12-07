@@ -1,3 +1,4 @@
 torch
 torchvision
 yt_dlp
+scikit-learn
