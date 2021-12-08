@@ -176,7 +176,7 @@ def run_program():
     else:
         now = re.findall('name=\'(.*)\',\stype', str(upload_img))[0]
         if st.session_state.img_name != now:
-            st.write("사진 바뀌었음")
+            #st.write("사진 바뀌었음")
             st.session_state.img_name = now
             st.session_state.uploaded_img = upload_img
             tf = transforms.ToTensor()
@@ -184,7 +184,7 @@ def run_program():
             img_tensor = transforms.Resize((256, 256))(img_tensor)
             inference_start(img_tensor)
         else:
-            st.write("사진 그대로")
+            #st.write("사진 그대로")
             st.session_state.uploaded_img = upload_img
             tf = transforms.ToTensor()
             img_tensor = tf(image_pil)
