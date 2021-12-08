@@ -44,15 +44,19 @@ def load_model():
 
 def music_downloader(url, name):
     with st.spinner("Wait while downloading..."):
-        with yt_dlp.YoutubeDL({}) as ydl:
-            ydl.download([url])
-        time.sleep(4)
+        try:
+            with yt_dlp.YoutubeDL({}) as ydl:
+                ydl.download([url])
+            time.sleep(4)
+        except Exception as e:
+            st.write("*{} : {}*".format(str(type(e)), e))
         files = os.listdir('.')
         this_ = [file for file in files if file.startswith(name)]
         try:
             this = this_[0]
         except:
-            this = "ErrorBy6PMDevelopers: Denied by youtube downloader module. Click the above link to stream music"
+            this = "<'ErrorBy6PMDevelopers'> : Denied by youtube downloader module. Click the above link to stream music"
+
     return this
 
 
@@ -343,7 +347,8 @@ if __name__ == "__main__":
     """, unsafe_allow_html=True)
     st.sidebar.markdown(f"<h5 style='text-align: right;'>Developed by 빅데이터종합설계 2조</h5>", unsafe_allow_html=True)
     st.title("6PM - Picture to Music Web Service")
-    st.sidebar.title("Pages")
+    st.write("you can check our source code via github [here](https://github.com/jjeong-SH/6PM-picturetomusic)!")
+    st.sidebar.title("Sidebar")
     menu = ["Home", "Feedback", "Opinions"]
     choice = st.sidebar.selectbox("Menu", menu)
     if choice == "Home":
