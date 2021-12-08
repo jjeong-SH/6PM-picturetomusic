@@ -32,6 +32,18 @@ def documentation():
     st.image(document1)
     document2 = Image.open('images/doc_slide_2.PNG')
     st.image(document2)
+    st.write('''
+    #### 1-1. Youtube API quota에 대한 추가 설명
+    ''')
+    st.write('''
+    해당 에러**(googleapiclient.errors.HttpError)**가 뜬다면 
+    요청할 수 있는 API 일일 할당량을 초과한 것이니 
+    
+    다시 할당량이 복구될 수 있도록 하루 기다려주시기 바랍니다ㅠㅠㅠㅠ
+    ''')
+    st.write("👇👇👇👇👇")
+    q_img = Image.open('images/quota_exceederror.png')
+    st.image(q_img)
 
 
 @st.cache(allow_output_mutation=True)
