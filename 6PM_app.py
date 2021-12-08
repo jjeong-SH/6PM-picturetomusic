@@ -318,6 +318,15 @@ def home_page():
             run_program()
     else:
         st.warning("Please Enter Username to start Demopage")
+        placeholder = st.empty()
+        intro_img = open("images/introduction.png", "rb")
+        contents = intro_img.read()
+        img_url = base64.b64encode(contents).decode("utf-8")
+        intro_img.close()
+        placeholder.markdown(
+            f'<p align="center"><img src="data:image/gif;base64,{img_url}" alt="spinner gif"></p>',
+            unsafe_allow_html=True
+        )
         
         
 
@@ -325,6 +334,14 @@ if __name__ == "__main__":
     st.set_page_config(layout="wide")
     showWarningOnDirectExecution = False
     
+    st.markdown("""
+        <style>
+        .css-1aumxhk {
+            padding: 0em 1em;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    st.sidebar.markdown(f"<h5 style='text-align: right;'>Developed by 빅데이터종합설계 2조</h5>", unsafe_allow_html=True)
     st.title("6PM - Picture to Music Web Service")
     st.sidebar.title("Pages")
     menu = ["Home", "Feedback", "Opinions"]
