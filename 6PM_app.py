@@ -28,7 +28,7 @@ def documentation():
     ''')
     main_img = Image.open('main_image.png')
     st.image(main_img)
-    document1 = Image.open('documentation_slide1.jpg')
+    document1 = Image.open('documentation_slide1.JPG')
     st.image(document1)
     document2 = Image.open('documentation_slide2.jpg')
     st.image(document2)
