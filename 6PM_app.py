@@ -26,11 +26,11 @@ def documentation():
     st.subheader('''
     6PM documentation (사용설명서)
     ''')
-    main_img = Image.open('main_image.png')
+    main_img = Image.open('images/main_image.png')
     st.image(main_img)
-    document1 = Image.open('documentation_slide1.JPG')
+    document1 = Image.open('images/doc_slide_1.PNG')
     st.image(document1)
-    document2 = Image.open('documentation_slide2.jpg')
+    document2 = Image.open('images/doc_slide_2.PNG')
     st.image(document2)
 
 
@@ -64,7 +64,7 @@ def music_stream(file):
 def inference_start(img_tensor):
     with st.spinner("Wait while inferencing..."):
         placeholder = st.empty()
-        spinner_file = open("Spinner-1s-200px.gif", "rb")
+        spinner_file = open("images/Spinner-1s-200px.gif", "rb")
         contents = spinner_file.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         spinner_file.close()
@@ -194,7 +194,7 @@ def run_program():
             img_tensor = transforms.Resize((256, 256))(img_tensor)
             with st.spinner("Wait while inferencing..."):
                 placeholder = st.empty()
-                spinner_file = open("Spinner-1s-200px.gif", "rb")
+                spinner_file = open("images/Spinner-1s-200px.gif", "rb")
                 contents = spinner_file.read()
                 data_url = base64.b64encode(contents).decode("utf-8")
                 spinner_file.close()
