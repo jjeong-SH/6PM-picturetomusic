@@ -34,7 +34,7 @@ def recommend(sentiment, genre):
 
 
 def link_youtube(query):
-    DEVELOPER_KEY = '{st.secrets.credentials.api_key}'
+    DEVELOPER_KEY = st.secrets.credentials.api_key
     YOUTUBE_API_SERVICE_NAME = "youtube"
     YOUTUBE_API_VERSION = "v3"
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=DEVELOPER_KEY)
