@@ -43,21 +43,24 @@ def load_model():
     
 
 def music_downloader(url, name):
+    connection = True
     with st.spinner("Wait while downloading..."):
         try:
             with yt_dlp.YoutubeDL({}) as ydl:
                 ydl.download([url])
             time.sleep(4)
         except Exception as e:
-            st.write("*{} : {}*".format(str(type(e)), e))
+            this = e
+            connection = False
         files = os.listdir('.')
         this_ = [file for file in files if file.startswith(name)]
         try:
             this = this_[0]
         except:
             this = "<'ErrorBy6PMDevelopers'> : Denied by youtube downloader module. Click the above link to stream music"
+            connection = False
 
-    return this
+    return this, connection
 
 
 def music_stream(file):
@@ -237,14 +240,18 @@ def run_program():
         video_name = link_youtube(query)['items'][0]['snippet']['title']
         st.markdown(f"<h5 style='text-align: left;'>{video_name}</h5>", unsafe_allow_html=True)
         st.write("Link: {}".format(link_url))
-        music_file = music_downloader(link_url, video_name)
+        music_file, connection = music_downloader(link_url, video_name)
 
         st.write("Music Streaming:")
-        if music_file.startswith('ErrorBy6PMDevelopers'):
-            st.write('*'+music_file+'*')
-        else:
+        if connection:
             music_stream(music_file)
             os.remove(music_file)
+        else:
+            if music_file.startswith("<'ErrorBy6PMDevelopers'>"):
+                st.write("*{}*".format(this))
+            else:
+                st.write("*{} : {}*".format(type(this), this))
+            
         st.write("")
         st.write("")
         
