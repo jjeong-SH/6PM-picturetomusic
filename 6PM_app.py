@@ -248,9 +248,9 @@ def run_program():
             os.remove(music_file)
         else:
             if music_file.startswith("<'ErrorBy6PMDevelopers'>"):
-                st.write("*{}*".format(this))
+                st.write("*{}*".format(music_file))
             else:
-                st.write("*{} : {}*".format(type(this), this))
+                st.write("*{} : {}*".format(type(music_file), music_file))
             
         st.write("")
         st.write("")
