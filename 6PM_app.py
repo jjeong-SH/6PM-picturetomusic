@@ -28,7 +28,10 @@ def documentation():
     ''')
     main_img = Image.open('main_image.png')
     st.image(main_img)
-    st.write("여기에 순서 같은거 적고 조원들 소개도 쓰면 좋을듯요... UI 디자인 어렵다... ..")
+    document1 = Image.open('documentation_slide1.jpg')
+    st.image(document1)
+    document2 = Image.open('documentation_slide2.jpg')
+    st.image(document2)
 
 
 @st.cache(allow_output_mutation=True)
