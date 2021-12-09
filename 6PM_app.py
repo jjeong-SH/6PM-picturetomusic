@@ -252,9 +252,10 @@ def run_program():
         video_id = link_youtube(query)['items'][0]['id']['videoId']
         link_url = f'https://www.youtube.com/watch?v={video_id}'
         video_name = link_youtube(query)['items'][0]['snippet']['title']
+        name_ = re.sub(r'[|/]', '_', video_name)
         st.markdown(f"<h5 style='text-align: left;'>{video_name}</h5>", unsafe_allow_html=True)
         st.write("Link: {}".format(link_url))
-        music_file, connection = music_downloader(link_url, video_name)
+        music_file, connection = music_downloader(link_url, name_)
 
         st.write("Music Streaming:")
         if connection:
