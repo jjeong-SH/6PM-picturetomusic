@@ -68,7 +68,7 @@ def music_downloader(url, name):
         
         files = os.listdir('.')
         try:
-            this_ = [file for file in files if file.startswith(name)]
+            this_ = [file for file in files if if name in file]
             this = this_[0]
         except:
             this = "<'ErrorBy6PMDevelopers'> : Denied by youtube downloader module. Click the above link to stream music"
