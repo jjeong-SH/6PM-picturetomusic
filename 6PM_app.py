@@ -237,7 +237,7 @@ def run_program():
     st.write(' ')
     genre = st.radio(
     "What genre do you want your music to be in?",
-        ('POP', '발라드', 'R&B/Soul', '일렉트로니카', '포크', '록/메탈', '랩/힙합')
+        ('발라드', '랩/힙합', 'R&B/Soul', '일렉트로니카', '포크', '록/메탈', 'POP')
     )
     queries = recommend(st.session_state.sentiment, genre)
     
