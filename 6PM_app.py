@@ -64,9 +64,11 @@ def music_downloader(url, name):
         except Exception as e:
             this = e
             connection = False
+            return this, connection
+        
         files = os.listdir('.')
-        this_ = [file for file in files if file.startswith(name)]
         try:
+            this_ = [file for file in files if file.startswith(name)]
             this = this_[0]
         except:
             this = "<'ErrorBy6PMDevelopers'> : Denied by youtube downloader module. Click the above link to stream music"
@@ -259,7 +261,7 @@ def run_program():
             music_stream(music_file)
             os.remove(music_file)
         else:
-            if music_file.startswith("<'ErrorBy6PMDevelopers'>"):
+            if type(music_file) == str:
                 st.write("*{}*".format(music_file))
             else:
                 st.write("*{} : {}*".format(type(music_file), music_file))
