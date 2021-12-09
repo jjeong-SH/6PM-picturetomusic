@@ -16,6 +16,6 @@ please read the documents(한국어) one the **[Home]-[Documentation]** task
 
 
 ## Warnings
-1. Because it uses Youtube API V.3, qota exceed error can appear. You can get recommendations after 24h if this happens*(googleapiclient.errors.HttpError)*
+1. Because it uses Youtube API V.3, qota exceed error can appear. You can get recommendations after 24h if this happens *(googleapiclient.errors.HttpError)*
 2. Might encounter other errors. This app is not 100% perfect. Please rerun the app if unhandled exception occurs.
 3. DB is NOT built. Usernames are not saved. (it's a prototype for a mini project)
