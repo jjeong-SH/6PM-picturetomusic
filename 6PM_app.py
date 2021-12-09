@@ -317,7 +317,7 @@ def feedback_after_program():
     choice_2 = st.radio("Choose one for question <2>", ("YES", "NO"))
     if choice_2 == "NO":
         opinion = st.selectbox(
-            "어떤 점이 불만족스러웠나오?",
+            "어떤 점이 불만족스러웠나요?",
             ("장르에 맞는 노래가 아니어서", "분위기에 노래가 맞지 않아서", "좋아하는 노래가 아니어서", "기타")
         )
         if opinion == "기타":
