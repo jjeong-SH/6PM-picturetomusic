@@ -60,7 +60,7 @@ def music_downloader(url, name):
         try:
             with yt_dlp.YoutubeDL({}) as ydl:
                 ydl.download([url])
-            time.sleep(5)
+            time.sleep(4)
         except Exception as e:
             this = e
             connection = False
