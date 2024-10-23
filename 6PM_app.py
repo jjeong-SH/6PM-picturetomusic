@@ -118,10 +118,10 @@ def inference_start(img_tensor):
 
 # 캐시 삭제용 inference function (다른 위젯 클릭했는데 돌아가면 망한거임)
 @st.cache_resource
-def inference(img_tensor):
+def inference(_img_tensor):
     # 여기에 inference
     # -----------------------------------------------------------------
-    batch_tensor = torch.unsqueeze(img_tensor, 0)
+    batch_tensor = torch.unsqueeze(_img_tensor, 0)
     model = load_model()
     device = torch.device('cpu')
     model.load_state_dict(torch.load('exp1_best_model.pth', map_location=device))
