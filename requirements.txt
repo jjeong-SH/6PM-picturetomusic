@@ -1,7 +1,8 @@
 scikit-learn
-numpy
+numpy==1.21.6
 google-api-python-client
 torch==1.10.0
 torchvision==0.11.1
 streamlit>=1.25.0
+tqdm
 yt_dlp
