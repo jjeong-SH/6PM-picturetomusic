@@ -122,6 +122,7 @@ def inference(img_tensor):
     # 여기에 inference
     # -----------------------------------------------------------------
     batch_tensor = torch.unsqueeze(img_tensor, 0)
+    batch_tensor = batch_tensor.numpy()
     model = load_model()
     device = torch.device('cpu')
     model.load_state_dict(torch.load('exp1_best_model.pth', map_location=device))
